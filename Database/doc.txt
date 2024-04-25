@@ -10,9 +10,9 @@ User: the end-user data
 - selected_avatar: foreign key that references 'id' from Avatar. It stores the selected avatar (the one to be used) by the user. 
 - email: unique key; VARCHAR datatype column.
 - password: TEXT datatype column. It stores a password hash.
-- checkpoint: foreign key that references 'id' from Lesson. It stores the 'id' of the last lesson made by the user.
-- energetic_amount: INT datatype column. The amount of energetics the user has (one energetic is consumed after each fail at an exercise).
-- rubies_amount: INT datatype column. The amount of rubies the user has (they're used to buy energetics, avatars etc).
+- checkpoint: foreign key that references 'id' from Lesson. It stores the 'id' of the last lesson made by the user. Its default value is 1.
+- energetic_amount: INT datatype column. The amount of energetics the user has (one energetic is consumed after each fail at an exercise). Its default value is 3.
+- rubies_amount: INT datatype column. The amount of rubies the user has (they're used to buy energetics, avatars etc). Its default value is 0.
 
 Avatar: avatars available to be selected by users; 
 - name: unique key; VARCHAR datatype column. it stores the name of the avatar to be shown to the end-user.
@@ -41,7 +41,7 @@ ExerciseChoices
 - exercise_id: foreign key that references 'id' from Exercise. It stores the 'id' of the exercise the choice belong to.
 - choice_id: unique key;  INT datatype column. It stores the 'id' of the choice available to be selected by the user.
 - choice_text: TEXT datatype column. It stores the text of the choice to be shown to the end-user.
-- is_correct: BOOLEAN datatype column. It stores if the choice is correct or not.
+- is_correct: BOOLEAN datatype column. It stores if the choice is correct or not. Its default value is false.
 
 Relationships:
 
